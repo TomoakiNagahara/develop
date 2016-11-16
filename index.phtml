@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>onepiece-framework's develop environment</title>
+</head>
+<body>
+<p>onepiece-framework's develop environment</p>
+<?php
+if( $file = ifset($_GET['file']) ){
+	include("{$file}.php");
+}
+?>
+<ol>
+	<li><a href="?file=mark">mark</a></li>
+	<li><a href="?file=dump">dump</a></li>
+</ol>
+</body>
+</html>
