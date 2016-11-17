@@ -8,9 +8,18 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-print __FILE__.'<br/>';
 D("<h1>?");
 D(Time::Datetime());
 Notice::Set("1st message.");
-Notice::Set("2nd message.");
+Notice::Set("<h1>2nd message.");
 D(Notice::Get());
+
+//	...
+$arr = [true, null];
+$obj = new stdClass();
+$obj->xss = "<h1>xss";
+hoge(null, true, false, 1.0, 'hoge', $arr, $obj);
+
+function hoge($null, $true, $false, $num, $str, $arr, $obj){
+	Notice::Set("3rd message.");
+}
