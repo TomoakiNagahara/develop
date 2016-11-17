@@ -9,5 +9,6 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 include('../core/Bootstrap.php');
+$_OP['APP_ROOT'] = __DIR__.'/'; // Corresponded to alias.
 header("Content-type: text/html; charset=utf-8");
 include('index.phtml');
