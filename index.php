@@ -8,7 +8,15 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+
+//	Boot onepice-framework.
 include('../core/Bootstrap.php');
-$_OP['APP_ROOT'] = __DIR__.'/'; // Corresponded to alias.
+
+//	Corresponded to alias.
+$_OP['APP_ROOT'] = __DIR__.'/';
+
+//	Set charset.
 header("Content-type: text/html; charset=utf-8");
+
+//	Dispatch.
 include('index.phtml');

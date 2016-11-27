@@ -8,5 +8,6 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-print CompressPath(__FILE__).'<br/>';
-print ExpandPath('App:/index.php').'<br/>';
+d(CompressPath(__FILE__));
+d(ConvertPath('app:/index.php'));
+d(ConvertURL('app:/foo/bar/index.php'));
