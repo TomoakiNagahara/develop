@@ -14,8 +14,6 @@ $db = Unit::Factory('db');
 
 //	Database connect.
 $args = [];
-$args[''] = '';
-
 $args['driver']		 = 'mysql';
 $args['host']		 = 'localhost';
 $args['database']	 = 'test';
