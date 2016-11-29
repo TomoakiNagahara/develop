@@ -1,10 +1,10 @@
 <?php
 /**
- * index.php
+ * develop:/index.php
  *
  * @created   2016-06-09
  * @version   1.0
- * @package   localhost
+ * @package   develop
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
