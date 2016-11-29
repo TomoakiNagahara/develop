@@ -18,7 +18,9 @@ $args['database']	 = 'test';
 $args['user']		 = 'test';
 $args['password']	 = '';
 $args['charset']	 = 'utf8';
-d($db->Connect($args));
+if(!$db->Connect($args) ){
+	return;
+}
 
 /* @var $sql sql */
 if( $sql = Unit::Factory('sql') ){
