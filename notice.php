@@ -18,6 +18,9 @@ D(Notice::Get());
 $arr = [true, null];
 $obj = new stdClass();
 $obj->xss = "<h1>xss";
+$obj->num = 12.5;
+$obj->bool = true;
+$obj->null = null;
 hoge(null, true, false, 1.0, 'hoge', $arr, $obj);
 
 function hoge($null, $true, $false, $num, $str, $arr, $obj){

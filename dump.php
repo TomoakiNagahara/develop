@@ -14,6 +14,7 @@ $arr = array(0, 1, 0.1, -1, "1", true, false, null);
 $arr[] = ' white space ';
 $arr[] = ' tab	space ';
 $arr[] = " line \r \n break";
+$arr[] = '<h1>日本語<br/>です。';
 $ass = array("key"=>"value");
 $obj   = new stdClass();
 $obj->key = 'value';
