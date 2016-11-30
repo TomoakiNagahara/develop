@@ -29,12 +29,31 @@ if(!$db->Connect($args) ){
 if(!$sql = Unit::Factory('sql') ){
 	return;
 }
+
+//	database
 $sql->SetDatabase($db);
+
+//	insert
+if( $text = ifset($_GET["text"]) ){
+	$args = [];
+	$args['table'] = 't_test';
+	$args['set']['text'] = $text;
+	if( $qu = $sql->Insert($args) ){
+		$id = $db->Query($qu);
+		d($qu);
+		d($id);
+	}
+}
+
+//	select
 $args = [];
-$args['table']	 = 't_test';
-$args['column']	 = 'id, text, timestamp';
-$args['where']['id'] = '1';
-$qu = $sql->Select($args, $db);
-d($qu);
-$records = $db->Query($qu);
-d($records);
+$args['table'] = 't_test';
+$args['limit'] = 10;
+//$args['column']	 = 'id, text';
+$args['where']['id']['eva']   = '>=';
+$args['where']['id']['value'] = '1';
+if( $qu = $sql->Select($args) ){
+	$records = $db->Query($qu);
+	d($qu);
+	d($records);
+}
