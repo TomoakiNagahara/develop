@@ -10,7 +10,7 @@
  */
 
 //	...
-$arr = [1, 2];
+$arr = [1, 1.0];
 $arr[] = '3';
 $arr['bool'] = true;
 $arr['null'] = null;
@@ -18,6 +18,9 @@ $arr['null'] = null;
 //	...
 $obj = new stdClass();
 $obj->foo = 1;
+$obj->bar = '1';
+$obj->obj = new stdClass();
+$obj->obj->hoge = true;
 
 //	...
 D();
