@@ -36,6 +36,12 @@ $sql->SetDatabase($db);
 //	...
 $id		 = ifset($_GET['id']);
 $text	 = ifset($_GET["text"]);
+$number	 = ifset($_GET["number"]);
+$where	 = ifset($_GET["where"], 'id');
+$evalu	 = ifset($_GET["evalu"], '=');
+$value	 = ifset($_GET["value"]);
+$limit	 = ifset($_GET["limit"], 10);
+$offset	 = ifset($_GET["offset"]);
 $delete	 = ifset($_GET["delete"]);
 
 //	insert
@@ -54,9 +60,9 @@ if( $id === null and $text ){
 if( $id and $text ){
 	$args = [];
 	$args['table'] = 't_test';
-	$args['limit'] = 1;
+	$args['limit'] = $limit;
 	$args['set']['text'] = $text;
-	$args['where']['id']['value'] = $id;
+	$args['where'][$where]['value'] = $id;
 	if( $qu = $sql->Update($args) ){
 		$io = $db->Query($qu);
 		d($qu);
@@ -68,8 +74,8 @@ if( $id and $text ){
 if( $id and $delete ){
 	$args = [];
 	$args['table'] = 't_test';
-	$args['limit'] = 1;
-	$args['where']['id']['value'] = $id;
+	$args['limit'] = $limit;
+	$args['where'][$where]['value'] = $id;
 	if( $qu = $sql->Delete($args) ){
 		$io = $db->Query($qu);
 		d($qu);
@@ -79,12 +85,12 @@ if( $id and $delete ){
 
 //	select
 $args = [];
-$args['table'] = 't_test';
-$args['limit'] = 10;
-$args['offset'] = 0;
+$args['table']  = 't_test';
+$args['limit']  = $limit;
+$args['offset'] = $offset;
 $args['column'] = ifset($_GET['column']);
-$args['where']['id']['evalu'] = '>=';
-$args['where']['id']['value'] = $id;
+$args['where'][$where]['evalu'] = $evalu;
+$args['where'][$where]['value'] = $value;
 if( $qu = $sql->Select($args) ){
 	$records = $db->Query($qu);
 	d($qu);
