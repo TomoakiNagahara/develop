@@ -15,7 +15,7 @@ if( $file = ifset($_GET['file']) ){
 }
 ?>
 <ol>
-	<?php foreach(['phpinfo','mark','dump','path','notice','time','session','database','sql'] as $key): ?>
+	<?php foreach(['phpinfo','mark','dump','path','notice','time','session','database','sql','japan'] as $key): ?>
 		<li><a href="?file=<?= $key ?>"><?= $key ?></a></li>
 	<?php endforeach; ?>
 </ol>
