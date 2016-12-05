@@ -18,5 +18,8 @@ $_OP['APP_ROOT'] = __DIR__.'/';
 //	Set charset.
 header("Content-type: text/html; charset=utf-8");
 
+//	file list.
+$file_list = ['phpinfo','mark','dump','path','notice','onepiece','time','session','template','layout','database','sql','japan'];
+
 //	Dispatch.
 include('index.phtml');

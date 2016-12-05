@@ -9,8 +9,8 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	Separated each object.
-d( OnePiece::Session('test',  'op') );
-d( Developer::Session('test', 'dev') );
+OnePiece::Session('test',  'op');
+Developer::Session('test', 'dev');
 d( $_SESSION );
 
 //	Common value static class and instantiate object.
