@@ -1,0 +1,16 @@
+<?php
+/**
+ * develop:/sql/index.phtml
+ *
+ * @created   2016-12-07
+ * @version   1.0
+ * @package   develop
+ * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright Tomoaki Nagahara All right reserved.
+ */
+?>
+<ol>
+	<?php foreach(['dml','dcl','ddl'] as $key): ?>
+		<li><a href="<?= ConvertURL("app:/sql/$key") ?>"><?= $key ?></a></li>
+	<?php endforeach; ?>
+</ol>

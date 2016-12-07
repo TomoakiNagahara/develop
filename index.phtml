@@ -50,6 +50,10 @@ if( $file = ifset($_GET['file']) ){
 }
 ?>
 <ol>
+	<?php
+	//	file list.
+	$file_list = ['phpinfo','mark','dump','path','notice','onepiece','time','session','template','layout','database','sql','japan'];
+	?>
 	<?php foreach($file_list as $key): ?>
 		<li><a href="?file=<?= $key ?>"><?= $key ?></a></li>
 	<?php endforeach; ?>
