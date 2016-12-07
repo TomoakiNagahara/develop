@@ -12,6 +12,6 @@ Env::Set(Layout::_EXECUTE_,    true);
 Env::Set(Layout::_DIRECTORY_, 'app:/app/layout/');
 Env::Set(Layout::_NAME_,      'develop');
 
-$route['path'] = ConvertPath('app:/app/layout/develop/content.php');
+$route[Router::_END_POINT_] = ConvertPath('app:/app/layout/develop/content.php');
 Router::Set($route);
 Layout::Dispatch();
