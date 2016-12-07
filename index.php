@@ -12,8 +12,11 @@
 //	Boot onepice-framework.
 include('../core/Bootstrap.php');
 
+//	Setup error hendler.
+include($_OP[OP_ROOT].'/error.php');
+
 //	Corresponded to alias.
-$_OP['APP_ROOT'] = __DIR__.'/';
+$_OP[APP_ROOT] = __DIR__.'/';
 
 //	Set charset.
 header("Content-type: text/html; charset=utf-8");
