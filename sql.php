@@ -34,7 +34,7 @@ if(!$sql = Unit::Factory('sql') ){
 $sql->SetDatabase($db);
 
 //	...
-$id		 = ifset($_GET['id']);
+$id		 = ifset($_GET['id'], 1);
 $text	 = ifset($_GET["text"]);
 $number	 = ifset($_GET["number"]);
 $where	 = ifset($_GET["where"], 'id');
@@ -90,7 +90,7 @@ $args['limit']  = $limit;
 $args['offset'] = $offset;
 $args['column'] = ifset($_GET['column']);
 $args['where'][$where]['evalu'] = $evalu;
-$args['where'][$where]['value'] = $value;
+$args['where'][$where]['value'] = $id;
 if( $qu = $sql->Select($args) ){
 	$records = $db->Query($qu);
 	d($qu);
