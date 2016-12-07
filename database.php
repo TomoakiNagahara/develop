@@ -21,5 +21,3 @@ $args['user']		 = 'test';
 $args['password']	 = '';
 $args['charset']	 = 'utf8';
 d($db->Connect($args));
-d($db->GetDatabase());
-d($db->GetTable($args['database']));

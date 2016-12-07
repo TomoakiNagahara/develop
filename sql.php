@@ -44,6 +44,16 @@ $limit	 = ifset($_GET["limit"], 10);
 $offset	 = ifset($_GET["offset"]);
 $delete	 = ifset($_GET["delete"]);
 
+//	show databases.
+$qu = $sql->Show([]);
+$io = $db->Query($qu);
+d($io);
+
+//	show tables.
+$qu = $sql->Show(['database'=>'test']);
+$io = $db->Query($qu);
+d($io);
+
 //	insert
 if( $id === null and $text ){
 	$args = [];
