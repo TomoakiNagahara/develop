@@ -20,6 +20,7 @@ $args['database']	 = 'test';
 $args['user']		 = 'test';
 $args['password']	 = '';
 $args['charset']	 = 'utf8';
+//$args[PDO::MYSQL_ATTR_MULTI_STATEMENTS] = false;
 if(!$db->Connect($args) ){
 	Notice::Set("Database connection was failed.");
 	return;
@@ -34,7 +35,7 @@ if(!$sql = Unit::Factory('sql') ){
 $sql->SetDatabase($db);
 
 //	...
-$id		 = ifset($_GET['id'], 1);
+$id		 = ifset($_GET['id']);
 $text	 = ifset($_GET["text"]);
 $number	 = ifset($_GET["number"]);
 $where	 = ifset($_GET["where"], 'id');
@@ -109,7 +110,13 @@ if( $qu = $sql->Select($args) ){
 
 //	count
 if( $qu = $sql->Count($args) ){
-	$records = $db->Query($qu, 'count');
+	$records = $db->Query($qu);
 	d($qu);
 	d($records);
 }
+
+//	Multi
+$qu = " SELECT * FROM test.t_test LIMIT 1; DELETE FROM t_test";
+$records = $db->Query($qu);
+d($qu);
+d($records);
