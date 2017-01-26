@@ -24,7 +24,16 @@ $file_list = ['phpinfo','mark','dump','path','notice','error','fatal','onepiece'
 <p>onepiece-framework's develop environment</p>
 <?php
 if( $file = ifset($_GET['file']) ){
-	include("{$file}.php");
+	if( strpos($file, '.') !== false ){
+		D("Wrong file name. ($file)");
+	}else{
+		$file_name = "{$file}.php";
+		if(!file_exists($file_name)){
+			D("Does not found this file. ($file)");
+		}else{
+			include($file_name);
+		}
+	}
 }
 ?>
 <ol>
