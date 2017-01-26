@@ -25,7 +25,7 @@ header("Content-type: text/html; charset=utf-8");
 Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
 
 //	Dispatch.
-include('index.phtml');
+OnePiece::Run('index.phtml');
 
 //	...
 $temp = [];
