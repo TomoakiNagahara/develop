@@ -26,3 +26,8 @@ Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
 
 //	Dispatch.
 include('index.phtml');
+
+//	...
+while( $notice = Notice::Get() ){
+	d($notice);
+}
