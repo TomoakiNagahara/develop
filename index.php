@@ -28,6 +28,9 @@ Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
 include('index.phtml');
 
 //	...
+$temp = [];
 while( $notice = Notice::Get() ){
-	d($notice);
+	printf('<p style="color:red;">%s</p>', Escape($notice['message']));
+	$temp[] = $notice;
 }
+d($temp);
