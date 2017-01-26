@@ -8,7 +8,6 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
 /* @var $db db */
 $db = Unit::Factory('db');
 

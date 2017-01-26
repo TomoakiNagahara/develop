@@ -12,9 +12,6 @@
 //	...
 $before = Time::Datetime();
 
-//	Set unit directory.
-Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
-
 //	Load japan unit.
 if( Unit::Load('japan') ){
 	$after = Time::Datetime();
