@@ -31,7 +31,7 @@ if( $file = ifset($_GET['file']) ){
 		if(!file_exists($file_name)){
 			D("Does not found this file. ($file)");
 		}else{
-			include($file_name);
+			OnePiece::Run($file_name);
 		}
 	}
 }
