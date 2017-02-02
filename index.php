@@ -25,9 +25,9 @@ header("Content-type: text/html; charset=utf-8");
 Env::Set(Unit::_DIRECTORY_, '/www/op/7/unit/');
 
 //	Dispatch.
-OnePiece::Run('index.phtml');
+OP::Run('index.phtml');
 
-//	...
+//	Display admin notice.
 $temp = [];
 while( $notice = Notice::Get() ){
 	printf('<p style="color:red;">%s</p>', Escape($notice['message']));

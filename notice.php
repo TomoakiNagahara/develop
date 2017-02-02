@@ -8,6 +8,7 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+//	...
 D("<h1>?");
 D(Time::Datetime());
 Notice::Set("1st message.");
