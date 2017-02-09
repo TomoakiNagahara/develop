@@ -8,7 +8,11 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+//	...
 Env::Set(Template::_DIRECTORY_, 'app:/app/template/');
-d(Template::Get('template.phtml'));
-$template = new Template();
-d($template->GetTemplate('template.phtml'));
+
+//	...
+Template::Run('template.phtml');
+
+//	...
+D(Template::Get('template.phtml'));
