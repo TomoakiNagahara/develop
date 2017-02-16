@@ -24,6 +24,8 @@ if( Unit::Load('japan') ){
 //	...
 d("Get tax by date.");
 foreach(['1988-12-31', '1989-01-01','1997-04-01','2014-04-01'] as $date){
-	$tax = japan::Tax($date);
-	d("$date --> $tax");
+	$price = 100;
+	$tax = Japan\Tax::Calc($price, $date);
+	$tia = $price + $tax; // Tax included amount
+	d("$date --> $price + $tax = $tia");
 }

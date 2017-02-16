@@ -8,12 +8,14 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-
 //	Boot onepice-framework.
 include('../core/Bootstrap.php');
 
 //	Setup error hendler.
 include($_OP[OP_ROOT].'/error.php');
+
+//	Include NewWorld.
+include( ConvertPath("op:/NewWorld.class.php") );
 
 //	Corresponded to alias.
 $_OP[APP_ROOT] = __DIR__.'/';

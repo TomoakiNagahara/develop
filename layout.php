@@ -13,4 +13,4 @@ Env::Set(Layout::_NAME_,      'develop');
 
 $route[Router::_END_POINT_] = ConvertPath('app:/app/layout/develop/content.php');
 Router::Set($route);
-Layout::Dispatch('Layout was successful.');
+Layout::Run('Layout was successful.');
