@@ -8,6 +8,7 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
+Unit::Directory('/www/op/7/unit/');
 Unit::Load('form');
 
 //	...
@@ -123,20 +124,20 @@ $form->Save($_GET);
 $form->Test();
 ?>
 <hr/>
-<? $form->Start() ?>
-<? $form->Input('file') ?>
+<?= $form->Start() ?>
+<?= $form->Input('file') ?>
 <table>
-	<tr><th><? $form->Label('text')     ?></th><td><? $form->Input('text')        ?></td></tr>
-	<tr><th><? $form->Label('textarea') ?></th><td><? $form->Input('textarea')    ?></td></tr>
-	<tr><th><? $form->Label('select')   ?></th><td><? $form->Input('select')      ?></td></tr>
-	<tr><th><? $form->Label('checkbox') ?></th><td><? $form->Checkbox('checkbox') ?></td></tr>
-	<tr><th><? $form->Label('agree')    ?></th><td><? $form->Input('agree')       ?></td></tr>
-	<tr><th><? $form->Label('gender')   ?></th><td><? $form->Radio('gender')      ?></td></tr>
-	<tr><th><? $form->Label('button')   ?></th><td><? $form->Input('button')      ?></td></tr>
-	<tr><th><? $form->Label('button')   ?></th><td><? $form->Button('button')     ?></td></tr>
-	<tr><th><? $form->Label('submit')   ?></th><td><? $form->Input('submit')      ?></td></tr>
+	<tr><th><?= $form->Label('text')     ?></th><td><?= $form->Input('text')        ?></td></tr>
+	<tr><th><?= $form->Label('textarea') ?></th><td><?= $form->Input('textarea')    ?></td></tr>
+	<tr><th><?= $form->Label('select')   ?></th><td><?= $form->Input('select')      ?></td></tr>
+	<tr><th><?= $form->Label('checkbox') ?></th><td><?= $form->Checkbox('checkbox') ?></td></tr>
+	<tr><th><?= $form->Label('agree')    ?></th><td><?= $form->Input('agree')       ?></td></tr>
+	<tr><th><?= $form->Label('gender')   ?></th><td><?= $form->Radio('gender')      ?></td></tr>
+	<tr><th><?= $form->Label('button')   ?></th><td><?= $form->Input('button')      ?></td></tr>
+	<tr><th><?= $form->Label('button')   ?></th><td><?= $form->Button('button')     ?></td></tr>
+	<tr><th><?= $form->Label('submit')   ?></th><td><?= $form->Input('submit')      ?></td></tr>
 </table>
-<? $form->Finish() ?>
+<?= $form->Finish() ?>
 <style>
 .button {
 	font-size: 12pt;

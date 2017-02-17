@@ -26,12 +26,7 @@ $_OP[APP_ROOT] = __DIR__.'/';
 
 //	...
 $mime = 'text/css';
-
-//	...
-Env::Set('mime',$mime);
-
-//	...
-header("Content-type: $mime");
+header("content-type: $mime");
 
 //	...
 $path = ConvertPath('op:/Template/Css/');

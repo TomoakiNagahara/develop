@@ -9,12 +9,23 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-//	Static method.
-OnePiece::Hoge();
-//d(OnePiece::hoge);
+//	...
+class onepiece
+{
+	use OP_CORE;
+}
 
-//	method.
-$op = new OnePiece();
+//	static
+try{
+	//	Static method.
+	onepiece::Hoge();
+	onepiece::_HOGE_;
+}catch( Throwable $e ){
+	Notice::Set($e->getMessage());
+}
+
+//	dynamic
+$op = new onepiece();
 $op->Hoge();
 $op->foo = 1;
-d($op->bar);
+$op->bar;
