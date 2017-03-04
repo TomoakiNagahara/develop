@@ -8,15 +8,12 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-Unit::Directory('/www/op/7/unit/');
-Unit::Load('form');
-
 //	...
 $_form = [];
 $_form['label']	 = 'テストフォーム';
 $_form['name']	 = 'test';
 $_form['action'] = '';
-$_form['method'] = 'get';
+$_form['method'] = 'post';
 $_form['style']	 = 'border:1px solid black;';
 $_form['class']	 = '';
 
@@ -115,10 +112,10 @@ $input['class']	 = 'button';
 $input['style']	 = '';
 $_form['input'][$input['name']] = $input;
 
-//	...
-$form = new Form();
-$form->AddForm($_form);
-$form->Save($_GET);
+/* @var $form Form */
+$form = Unit::Factory('form');
+$form->Init($_form);
+$form->Save(Http::Request());
 
 //	...
 $form->Test();
@@ -146,3 +143,6 @@ $form->Test();
 }
 </style>
 <hr/>
+<form action="./?file=form" method="post">
+	<button>submit</button>
+</form>
