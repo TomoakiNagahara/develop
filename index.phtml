@@ -9,8 +9,10 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	file list.
-$file_list = ['phpinfo','functions','mark','dump','path','notice','notice-mail',
+$file_list = [
+		'phpinfo','functions','mark','dump','path','notice','notice-mail',
 		'env','onepiece','time','session','cookie','template','layout',
+		'blowfish','openssl',
 		'database','sql','form','japan'
 	];
 ?>
@@ -28,7 +30,7 @@ $file_list = ['phpinfo','functions','mark','dump','path','notice','notice-mail',
 <?php
 if( $file = ifset($_GET['file']) ){
 	if( strpos($file, '.') !== false ){
-		D("Wrong file name. ($file)");
+		Html::E("Wrong file name. ($file)");
 	}else{
 		//	...
 		$file_name = "{$file}.php";
