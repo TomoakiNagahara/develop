@@ -11,4 +11,5 @@
 ?>
 CompressPath：__FILE__ --> <?= CompressPath(__FILE__) ?><br/>
 ConvertPath：app:/index.php --> <?= ConvertPath('app:/index.php') ?><br/>
+ConvertURL：__FILE__ --> <?= ConvertURL(__FILE__) ?><br/>
 ConvertURL：app:/foo/bar/index.php --> <?= ConvertURL('app:/foo/bar/index.php') ?><br/>
