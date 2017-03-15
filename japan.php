@@ -22,10 +22,16 @@ if( Unit::Load('japan') ){
 }
 
 //	...
-d("Get tax by date.");
+$price = 10000;
+$today = Time::Date();
+$rate = Japan\Tax::Rate($today);
+$tax  = Japan\Tax::Calc($price, $today);
+Html::P("Today={$today}, Price={$price}, Rate={$rate}, Tax={$tax}");
+
+//	...
 foreach(['1988-12-31', '1989-01-01','1997-04-01','2014-04-01'] as $date){
 	$price = 100;
 	$tax = Japan\Tax::Calc($price, $date);
 	$tia = $price + $tax; // Tax included amount
-	d("$date --> $price + $tax = $tia");
+	Html::P("$date --> $price + $tax = $tia");
 }
