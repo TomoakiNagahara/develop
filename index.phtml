@@ -13,7 +13,7 @@ $file_list = [
 		'phpinfo','functions','mark','dump','path','notice','notice-mail',
 		'env','onepiece','time','session','cookie','template','layout',
 		'blowfish','openssl',
-		'database','sql','form','japan'
+		'database','sql','form','japan','self-test'
 	];
 ?>
 <!doctype html>
@@ -60,5 +60,10 @@ if( $file = ifset($_GET['file']) ){
 </ol>
 <script type="text/javascript" src="./import-js.php"></script>
 <link rel="stylesheet" type="text/css" href="./import-css.php">
+<style>
+p.error {
+	color: red;
+}
+</style>
 </body>
 </html>
