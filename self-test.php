@@ -9,18 +9,6 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	...
-if(!$db = Unit::Factory('db')){
-	Html::E('Could not load db unit.');
-	return;
-}
-
-//	...
-if(!$sql = Unit::Factory('sql')){
-	Html::E('Could not load sql unit.');
-	return;
-}
-
-//	...
 if(!Unit::Load('self-test')){
 	Html::E('Could not load self-test unit.');
 	return;
@@ -29,9 +17,12 @@ if(!Unit::Load('self-test')){
 //	...
 $json   = file_get_contents('self-test.json');
 $config = json_decode($json, true);
+//d('config', $config);
 
-d($json);
-d($config);
+//	...
+$result = Inspector::Inspect($config);
+//d('inspection result', $result);
+?>
+<div>
 
-$result = Doctor::Inspection($config);
-d($result);
+</div>

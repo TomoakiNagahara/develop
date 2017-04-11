@@ -6,6 +6,86 @@
 		"user"	:"test",
 		"password":"",
 		"database":"test",
-		"charset" :"utf8"
+		"charset" :"utf8",
+		"databases":{
+			"test":{
+				"collation":"utf8_general_ci",
+				"tables":{
+					"t_test":{
+						"fields":{
+							"id":{
+								"type":"int"
+							},
+							"number":{
+								"type":"int",
+								"null": false
+							},
+							"text":{
+								"type":"text",
+								"null": false,
+								"collation":"utf8_general_ci"
+							},
+							"timestamp":{
+								"type":"timestamp",
+								"null": false
+							}
+						},
+						"indexes":{
+							"auto_increment":"id"
+						}
+					},
+					"t_comment":{
+						"fields":{
+							"ai":{
+							},
+							"user_id":{
+								"type"    : "char",
+								"length"  :  8,
+								"comment" : ""
+							},
+							"nickname":{
+								"type"    : "text",
+								"comment" : ""
+							},
+							"comment":{
+								"type"    : "text",
+								"comment" : ""
+							},
+							"created":{
+								"type"    : "datetime",
+								"comment" : ""
+							},
+							"updated":{
+								"type"    : "datetime",
+								"comment" : ""
+							},
+							"deleted":{
+								"type"    : "datetime",
+								"comment" : ""
+							},
+							"timestamp":{
+								"type"    : "timestamp",
+								"comment" : ""
+							}
+						},
+						"indexes":{
+							"auto_increment":"ai"
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"driver":"mysql",
+		"host"	:"localhost",
+		"port"	:"3306",
+		"user"	:"onepiece",
+		"password":"hogehoge",
+		"charset" :"utf8",
+		"databases" : {
+			"onepiece": {
+			}
+		}
 	}
 ]
