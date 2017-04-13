@@ -29,11 +29,36 @@ $result = Inspector::Inspections($conf);
 <?php d($result) ?>
 <style>
 div.inspection {
-	_border: 1px solid black;
+	border: 1px solid black;
+	padding: 1em;
+}
+
+div.inspection p {
+	_border: 1px dotted green;
+	_margin: 0;
+}
+
+div.inspection ul,
+div.inspection ol {
+	_border: 1px dotted blue;
+	margin:  0;
+	padding: 0;
+	padding-left: 1.5em;
+}
+
+div.inspection p.label {
+	_border: 1px dotted red;
+	margin: 0;
+	font-weight: bold;
 }
 
 div.inspection ol.root {
-	_border: 1px solid black;
+	_border: 1px dotted blue;
+}
+
+div.inspection ol.root li > p {
+	_border: 1px dotted red;
+	margin-top: 0.5em;
 }
 
 div.inspection ol.root li[data-result="true"] span{
