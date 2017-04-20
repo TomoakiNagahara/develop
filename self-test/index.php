@@ -33,39 +33,39 @@ div.inspection {
 	padding: 1em;
 }
 
-div.inspection p {
-	_border: 1px dotted green;
-	_margin: 0;
+div.inspection p.error {
+	color: red;
 }
 
 div.inspection ul,
 div.inspection ol {
-	_border: 1px dotted blue;
 	margin:  0;
 	padding: 0;
 	padding-left: 1.5em;
+	padding-left: 2em;
 }
 
 div.inspection p.label {
-	_border: 1px dotted red;
 	margin: 0;
 	font-weight: bold;
 }
 
-div.inspection ol.root {
-	_border: 1px dotted blue;
+div.inspection ol.root li,
+div.inspection ol.root span {
+	transition: all 1000ms 0ms linear;
 }
 
-div.inspection ol.root li > p {
-	_border: 1px dotted red;
-	margin-top: 0.5em;
-}
-
-div.inspection ol.root li[data-result="true"] span{
+div.inspection ol.root li[data-result="true"] > span {
 	color: blue;
 }
 
-div.inspection ol.root li[data-result="false"] span{
+div.inspection ol.root li[data-result="false"] > span {
 	color: red;
+}
+
+div.inspection ol.root .fadeout {
+	color: #fff  !important;
+	height:    0 !important;
+	overflow: hidden;
 }
 </style>

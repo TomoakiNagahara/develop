@@ -3,6 +3,112 @@
 		"driver":"mysql",
 		"host"	:"localhost",
 		"port"	:"3306",
+		"user"	:"cctokyo",
+		"password":"hogehoge",
+		"database":"cctokyo",
+		"charset" :"utf8",
+		"databases":{
+		}
+	},
+	{
+		"driver":"mysql",
+		"host"	:"localhost",
+		"port"	:"3306",
+		"user"	:"erabuhonyaku",
+		"password":"d9ATqLVk",
+		"database":"erabuhonyaku_test",
+		"charset" :"utf8",
+		"databases":{
+			"erabuhonyaku_test":{
+				"collation":"utf8_general_ci",
+				"tables":{
+					"MMBR":{
+						"fields":{
+							"MMBR_ID":{
+								"type":"int"
+							}
+						},
+						"indexes":{
+							"auto_increment":"MMBR_ID"
+						}
+					},
+					"MMBR_PRSN":{
+						"fields":{
+							"PRSN_ID":{
+								"unsigned": true,
+								"length"  : 10,
+								"comment" : "Auto increment ID."
+							},
+							"PRSN_USER_ID":{
+								"type" : "text",
+								"null" : false,
+								"index": true
+							},
+							"PRSN_MAIL":{
+								"type":"text",
+								"null" : false,
+								"index": true
+							},
+							"PRSN_PSWD":{
+								"type":"varchar",
+								"length":32
+							},
+							"created":{
+								"type":"datetime"
+							},
+							"updated":{
+								"type":"datetime"
+							},
+							"deleted":{
+								"type":"datetime"
+							},
+							"timestamp":{
+								"type":"timestamp",
+								"null" : false
+							}
+						},
+						"indexes":{
+							"auto_increment":"PRSN_ID"
+						}
+					},
+					"TRAN":{
+						"fields":{
+							"id":{
+								"type":"int"
+							},
+							"timestamp":{
+								"type":"timestamp"
+							}
+						}
+					},
+					"TRAN_PRSN":{
+						"fields":{
+							"id":{
+								"type":"int"
+							},
+							"timestamp":{
+								"type":"timestamp"
+							}
+						}
+					},
+					"SBJT":{
+						"fields":{
+							"id":{
+								"type":"int"
+							},
+							"timestamp":{
+								"type":"timestamp"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"driver":"mysql",
+		"host"	:"localhost",
+		"port"	:"3306",
 		"user"	:"test",
 		"password":"",
 		"database":"test",
