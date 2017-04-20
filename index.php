@@ -33,4 +33,8 @@ while( $notice = Notice::Get() ){
 	printf('<p style="color:red;">%s</p>', Escape($notice['message']));
 	$temp[] = $notice;
 }
-d($temp);
+
+//	...
+if( $temp ){
+	d($temp);
+}

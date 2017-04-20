@@ -27,11 +27,19 @@ if( $file = ifset($_GET['file']) ){
 	if( strpos($file, '.') !== false ){
 		D("Wrong file name. ($file)");
 	}else{
+		//	...
 		$file_name = "{$file}.php";
-		if(!file_exists($file_name)){
-			D("Does not found this file. ($file)");
+		if( file_exists($file_name) ){
+			//	mono page.
+			Template::Run($file_name);
 		}else{
-			OnePiece::Run($file_name);
+			//	sub directory.
+			$file_name = "{$file}/index.php";
+			if( file_exists($file_name) ){
+				Template::Run($file_name);
+			}else{
+				Html::E("Does not found this file. ($file)");
+			}
 		}
 	}
 }
